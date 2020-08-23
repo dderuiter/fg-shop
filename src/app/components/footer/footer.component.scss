@@ -1,0 +1,13 @@
+@import "../../../variables.scss";
+
+footer {
+  font-family: 'Asap', sans-serif;
+  font-weight: 400;
+  background-color: #3a3a3a;
+
+  hr {
+    background-color: $fg-light-yellow;
+    width: 100px;
+    height: 1px;
+  }
+}
