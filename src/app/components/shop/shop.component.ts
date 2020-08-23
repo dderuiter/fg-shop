@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShopDateService } from '../../services/shop-date.service';
 
 @Component({
   selector: 'app-shop',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
+  shopDate: string;
+
   featuredItemImages: string[] = [
     "featured-item-1.jpg",
     "featured-item-2.jpg",
@@ -21,9 +24,12 @@ export class ShopComponent implements OnInit {
     "regular-item-6.jpg"
   ]
 
-  constructor() { }
+  constructor(private shopDateService: ShopDateService) { }
 
   ngOnInit(): void {
+    this.shopDateService.currentShopDate.subscribe(async (shopDate: string) => {
+      this.shopDate = shopDate;
+    });
   }
 
 }

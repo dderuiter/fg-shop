@@ -1,3 +1,15 @@
-<div class="d-flex align-items-center">
-  <h1>ITEM SHOP</h1>
-</div>
+<mdb-navbar id="fg-navbar" SideClass="navbar navbar-expand-sm navbar-dark scrolling-navbar intro-fixed-nav" [containerInside]="false">
+  <mdb-navbar-brand><a class="navbar-brand" href="#">ITEM SHOP</a></mdb-navbar-brand>
+  <links>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown" dropdown>
+        <a id="date-picker" dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle rounded" mdbWavesEffect>
+          <mdb-icon far icon="calendar-alt"></mdb-icon> {{selectedDate}} <span class="caret"></span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" [ngClass]="{disabled:date===selectedDate}" mdbWavesEffect (click)="changeDate(date)" *ngFor="let date of dates">{{date}}</a>
+        </div>
+      </li>
+    </ul>
+  </links>
+</mdb-navbar>

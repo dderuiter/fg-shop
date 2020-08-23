@@ -7,18 +7,57 @@ body {
 
 body {
   position: relative;
-  background-color: $fg-blue;
-  color: $fg-white;
   display: flex;
   flex-direction: column;
-}
-
-.flex-content {
-  flex: 1 0 auto;
+  background-color: $fg-blue;
+  font-family: "Titan One", cursive;
+  color: $fg-white;
 }
 
 h1,
 h2 {
-  font-family: "Titan One", cursive;
   text-shadow: 2px 2px 2px rgba(26, 26, 26, 0.5);
+}
+
+.navbar {
+  background-color: #2e2e2e;
+  color: $fg-white;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+
+  .navbar-brand {
+    color: $fg-white;
+    font-size: 2.0rem;
+    padding: 0;
+  }
+
+  #date-picker {
+    background-color: $fg-yellow;
+    color: $fg-black;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .nav-item {
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    color: $fg-white;
+
+    .dropdown-item {
+      font-family: 'Asap', sans-serif;
+      font-weight: 400;
+    }
+
+    .dropdown-item:hover {
+      background-color: $fg-yellow;
+    }
+
+    .dropdown-item.disabled {
+      background-color: #e2e2e2;
+    }
+  }  
+}
+
+.flex-content {
+  flex: 1 0 auto;
 }
