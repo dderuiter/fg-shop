@@ -1,0 +1,12 @@
+@import "../../../../variables.scss";
+
+.shop-item {
+  border: 4px solid $fg-yellow;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.shop-item:hover {
+  transform: rotate(-4deg);
+  transform: scale(1.05, 1.05);
+}
