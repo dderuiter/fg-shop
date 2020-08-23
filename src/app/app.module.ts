@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ShopItemComponent } from './components/shop/shop-item/shop-item.component';
 import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CountdownTimerComponent } from './components/countdown-timer/countdown-
     HeaderComponent,
     ShopComponent,
     ShopItemComponent,
-    CountdownTimerComponent
+    CountdownTimerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
