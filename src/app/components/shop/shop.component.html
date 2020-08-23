@@ -1,12 +1,33 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2>FEATURED ITEMS</h2>
+      <div class="d-flex align-items-center shop-section-header">
+        <h2>FEATURED ITEMS</h2>
+        <!-- <app-countdown-timer class="ml-auto"></app-countdown-timer> -->
+      </div>
     </div>
   </div>
+  <div class="shop-section">
+    <div class="row p-4">
+      <div class="col-md-4" *ngFor="let imgName of featuredItemImages">
+        <app-shop-item [imgName]=imgName></app-shop-item>
+      </div>
+    </div>
+  </div>
+  <br />
   <div class="row">
     <div class="col">
-      <h2>REGULAR ITEMS</h2>
+      <div class="d-flex align-items-center shop-section-header">
+        <h2 class="flex-fill">REGULAR ITEMS</h2>
+        <app-countdown-timer class="ml-auto"></app-countdown-timer>
+      </div>
+    </div>
+  </div>
+  <div class="shop-section">
+    <div class="row p-4">
+      <div class="col-md-2" *ngFor="let imgName of regularItemImages">
+        <app-shop-item [imgName]=imgName></app-shop-item>
+      </div>
     </div>
   </div>
 </div>
