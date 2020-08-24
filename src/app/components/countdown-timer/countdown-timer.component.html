@@ -1,6 +1,6 @@
-<div *ngIf="days !== 0" class="animate fadeIn">
+<div *ngIf="days !== 0">
   <mdb-icon fas icon="sync" class="mr-1"></mdb-icon> {{days}}d {{hours}}h {{minutes}}m {{seconds}}s
 </div>
-<div *ngIf="days === 0" class="animate fadeIn">
+<div *ngIf="days === 0">
   <mdb-icon fas icon="sync" class="mr-1"></mdb-icon> {{hours}}h {{minutes}}m {{seconds}}s
 </div>

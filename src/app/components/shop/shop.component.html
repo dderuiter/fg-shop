@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <div class="shop-section-header">
+      <div class="d-flex align-items-center justify-content-between flex-wrap shop-section-header">
         <h2>FEATURED ITEMS</h2>
+        <app-countdown-timer [dayInterval]=3></app-countdown-timer>
       </div>
     </div>
   </div>
@@ -17,8 +18,8 @@
   <div class="row">
     <div class="col">
       <div class="d-flex align-items-center justify-content-between flex-wrap shop-section-header">
-        <h2 class="">REGULAR ITEMS</h2>
-        <app-countdown-timer></app-countdown-timer>
+        <h2 class="">REGULAR ITEMS (RANDOM)</h2>
+        <app-countdown-timer [dayInterval]=1></app-countdown-timer>
       </div>
     </div>
   </div>
