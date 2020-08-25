@@ -30,6 +30,7 @@ export class CountdownTimerComponent implements OnInit {
       let timeDifference = now.getTime() - startDate.getTime();
       let daysDifference = timeDifference / (1000 * 3600 * 24);
       let daysTillNextUpdate = Math.floor(this.dayInterval - (daysDifference % this.dayInterval));
+      console.log("Days Till: " + daysTillNextUpdate);
 
       // Set date to next update day
       target.setDate(target.getDate() + daysTillNextUpdate);
