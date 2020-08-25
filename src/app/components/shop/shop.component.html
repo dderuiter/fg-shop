@@ -18,14 +18,14 @@
   <div class="row">
     <div class="col">
       <div class="d-flex align-items-center justify-content-between flex-wrap shop-section-header">
-        <h2 class="">REGULAR ITEMS (RANDOM)</h2>
+        <h2 class="">REGULAR ITEMS</h2>
         <app-countdown-timer [dayInterval]=1></app-countdown-timer>
       </div>
     </div>
   </div>
   <div class="shop-section p-4 z-depth-4">
     <div class="row justify-content-sm-center justify-content-center">
-      <div class="col-md-2 col-sm-4 col-6" *ngFor="let imgName of regularItemImages">
+      <div class="col-lg-2 col-md-4 col-sm-4 col-6" *ngFor="let imgName of regularItemImages">
         <app-shop-item [imgName]=imgName [shopDate]=shopDate class="m-4"></app-shop-item>
       </div>
     </div>
