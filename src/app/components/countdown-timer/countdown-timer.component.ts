@@ -27,36 +27,23 @@ export class CountdownTimerComponent implements OnInit {
       let now: Date = new Date();
       let target: Date = new Date(now);
 
-      let daysTillNextUpdate: number = 0;
+      let timeDifference = now.getTime() - startDate.getTime();
+      let daysDifference = timeDifference / (1000 * 3600 * 24);
+      let daysTillNextUpdate = Math.floor(this.dayInterval - (daysDifference % this.dayInterval));
 
-      // Check if updater interval is every 3 days
-      if (this.dayInterval === 3) {
-        let timeDifference = now.getTime() - startDate.getTime();
-
-        // Get days since start date
-        let daysDifference = timeDifference / (1000 * 3600 * 24);
-
-        // Get number of days until update
-        daysTillNextUpdate = Math.ceil(daysDifference % this.dayInterval);
-
-        // Set date to when the next 3 day update interval is
-        target.setDate(target.getDate() + daysTillNextUpdate);
-      }
-
-      // Check if shop was already updated for the day
-      if (now.getHours() >= updateHr) {
-        // Check if updater interval is every day
-        if (this.dayInterval === 1) {
-          target.setDate(target.getDate() + this.dayInterval);
-        }
-        // Check if update interval is every 3 days and update interval already passed today
-        else if (this.dayInterval === 3 && daysTillNextUpdate === 0) {
-          target.setDate(target.getDate() + this.dayInterval);
-        }
-      }
+      // Set date to next update day
+      target.setDate(target.getDate() + daysTillNextUpdate);
 
       // Set shop update time
       target.setHours(updateHr, 0, 0);
+
+      // Check if shop was already updated for the day
+      if (now.getHours() >= target.getHours()) {
+        // Check if tomorrow is update day
+        if (daysTillNextUpdate === 0) {
+          target.setDate(target.getDate() + 1);
+        }
+      }
 
       // Get the time difference
       var delta = target.getTime() - now.getTime();
